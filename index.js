@@ -23,7 +23,9 @@ const port = process.env.PORT || 5000;
 
 const server = http.createServer(app);
 
-mongoose.connect(process.env.MONGODB_URL).then(() => {
+const uri = 'mongodb+srv://harshitjoshi1706:5PnEgwqPnrOQTlVE@cluster0.zfriovq.mongodb.net/Moviecorner?retryWrites=true&w=majority&appName=AtlasApp';
+
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
   console.log("Mongodb connected");
   server.listen(port, () => {
     console.log(`Server is listening on port ${port}`);
