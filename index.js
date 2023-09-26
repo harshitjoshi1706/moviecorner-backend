@@ -2,11 +2,16 @@
 // import cookieParser from "cookie-parser";
 // import http from "http";
 // import "dotenv/config";
-require('dotenv').config();
+const dotenv = require("dotenv");
+const cors = require('cors');
+
+dotenv.config();
 const express = require('express');
 const http = require('http');
 const app = express()
 const mongoose = require("mongoose");
+
+app.use(cors());
 
 app.use(express.json());
 // app.use(express.urlencoded({ extended: false }));
